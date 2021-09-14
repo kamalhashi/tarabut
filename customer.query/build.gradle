@@ -1,0 +1,12 @@
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':customer.core')
+}
+
+test {
+    useJUnitPlatform()
+}

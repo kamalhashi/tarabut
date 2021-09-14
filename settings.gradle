@@ -1,0 +1,5 @@
+rootProject.name = 'customer-service'
+include 'customer.core'
+include 'customer.cmd'
+include 'customer.query'
+
