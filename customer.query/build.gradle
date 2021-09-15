@@ -7,3 +7,7 @@ repositories {
 dependencies {
     implementation project(':customer.core')
 }
+
+test {
+    useJUnitPlatform()
+}

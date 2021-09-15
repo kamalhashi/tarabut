@@ -20,7 +20,6 @@ public class CustomerResponse<T> extends BaseResponse {
 
     private List<T> customers;
 
-
     public CustomerResponse(String id, String message) {
         super(message);
         this.id = id;
