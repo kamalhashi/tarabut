@@ -31,6 +31,8 @@ class CustomerAggregate {
         log.info("AddCustomerCommand id: {}", cmd.getId());
         Assert.notNull(cmd.getId(), "Id should not be null");
         Assert.notNull(cmd.getName(), "Name should not be null");
+        Assert.notNull(cmd.getPreference(), "Preference should not be null");
+
 
         var customer = AddCustomerEvent.builder()
                 .id(cmd.getId())
