@@ -4,8 +4,3 @@ server:
 spring:
   application:
      name: customer-query
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: tarabut

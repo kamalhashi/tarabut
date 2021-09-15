@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - 27017:27017
+
+
+  axonserver:
+    image: axoniq/axonserver
+    hostname: axonserver
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8024/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  customer.cmd:
+    container_name: customer.cmd
+    build:
+      context: customer.cmd
+      dockerfile: Dockerfile
+    image: customer.cmd:latest
+    ports:
+      - 9091:9091
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - AXONSERVER_HOST=axonserver
+      - MONGO_HOST=mongo
+    depends_on:
+      - mongo
+      - axonserver
+
+  customer.query:
+    container_name: customer.query
+    build:
+      context: customer.query
+      dockerfile: Dockerfile
+    image: customer.query:latest
+    ports:
+      - 9092:9092
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - AXONSERVER_HOST=axonserver
+      - MONGO_HOST=mongo
+    depends_on:
+      - mongo
+      - axonserver

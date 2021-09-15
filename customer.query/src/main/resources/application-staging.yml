@@ -1,11 +1,10 @@
-server:
-  port: 9092
-
 spring:
-  application:
-     name: customer-query
   data:
     mongodb:
-      host: localhost
+      host: ${MONGO_HOST}
       port: 27017
       database: tarabut
+
+axon:
+  axonserver:
+    servers: ${AXONSERVER_HOST}:8124

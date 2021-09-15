@@ -2,8 +2,11 @@ package com.tarabut.customer.core.dto;
 
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CustomerResponse<T> extends BaseResponse {
     private String id;
 

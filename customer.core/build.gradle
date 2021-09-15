@@ -1,11 +1,5 @@
 repositories {
     mavenCentral()
- }
-
-bootJar{
-    enabled = false
+    mavenLocal()
 }
 
-jar{
-    enabled = true
-}
