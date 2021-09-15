@@ -4,9 +4,3 @@ server:
 spring:
   application:
     name: customer-cmd
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: tarabut
-

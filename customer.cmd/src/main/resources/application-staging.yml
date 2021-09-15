@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      port: 27017
+      database: tarabut
+
+axon:
+  axonserver:
+    servers: ${AXONSERVER_HOST}:8124
