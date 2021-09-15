@@ -80,6 +80,3 @@ also you should on the screen a message which says   ` Successfully connected to
 - More info about Axon: https://docs.axoniq.io/reference-guide/
 - http://progressivecoder.com/implementing-event-sourcing-with-axon-and-spring-boot-part-3/
 
-
-
-docker run --name mongo-db --host mongo-db -d mongo:latest
